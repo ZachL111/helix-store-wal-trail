@@ -1,0 +1,73 @@
+{
+  "repo": "helix-store-wal-trail",
+  "language": "Swift",
+  "category": "Databases",
+  "goal": "Develop a Swift command-oriented project for wal scenarios with deny and allow fixtures, explainable decision traces, and no network dependency.",
+  "review_model": {
+    "terms": [
+      "index fit",
+      "join width",
+      "constraint risk",
+      "plan drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "index fit",
+      "signal": 80,
+      "slack": 28,
+      "drag": 28,
+      "confidence": 64,
+      "score": 168,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "join width",
+      "signal": 58,
+      "slack": 24,
+      "drag": 22,
+      "confidence": 87,
+      "score": 161,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "constraint risk",
+      "signal": 68,
+      "slack": 37,
+      "drag": 18,
+      "confidence": 80,
+      "score": 199,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "plan drift",
+      "signal": 56,
+      "slack": 40,
+      "drag": 13,
+      "confidence": 91,
+      "score": 204,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "index fit",
+      "signal": 78,
+      "slack": 45,
+      "drag": 20,
+      "confidence": 56,
+      "score": 197,
+      "lane": "ship"
+    }
+  ]
+}

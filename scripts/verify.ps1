@@ -61,5 +61,7 @@ foreach ($pathPattern in $knownPaths) {
 New-Item -ItemType Directory -Force build | Out-Null
 $swiftSdk = Get-ChildItem "$env:LOCALAPPDATA\Programs\Swift\Platforms\*\Windows.platform\Developer\SDKs\Windows.sdk" -Directory | Select-Object -First 1
 if (-not $swiftSdk) { throw "Swift Windows SDK not found" }
-swiftc -sdk $swiftSdk.FullName src/Core.swift tests/Test.swift -o build/test.exe
+swiftc -sdk $swiftSdk.FullName src/Core.swift src/DomainReview.swift tests/Test.swift -o build/test.exe
 ./build/test.exe
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-helix-store-wal-detail.ps1
