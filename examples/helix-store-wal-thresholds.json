@@ -1,0 +1,17 @@
+{
+  "repo": "helix-store-wal-trail",
+  "thresholds": {
+    "signal": 3,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 4,
+    "ship": 180,
+    "watch": 96
+  },
+  "terms": [
+    "index fit",
+    "join width",
+    "constraint risk",
+    "plan drift"
+  ]
+}
